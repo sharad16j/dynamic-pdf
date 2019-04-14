@@ -1,0 +1,206 @@
+<html>
+    <title>xxxx Receipt</title>
+    <body>
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <style>
+            body {font-family: Arial, Helvetica, sans-serif;}
+            * {box-sizing: border-box;}
+            
+            input[type=text], select, textarea
+            {
+              padding: 9px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+              margin-top: 6px;
+              margin-bottom: 16px;
+              resize: vertical;
+            }            
+            input[type=submit]
+            {
+              background-color: #4CAF50;
+              color: white;
+              padding: 12px 20px;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+            }
+            
+            input[type=submit]:hover
+            {
+              background-color: #45a049;
+            }
+            
+            .container
+            {
+              border-radius: 5px;
+              background-color: #f2f2f2;
+              padding: 20px;
+            }
+            .dropdown
+            {
+                width: 30%;
+                padding: 2px;
+                margin-left: 6px;
+                border-radius: 15px;
+            }
+            .payvia
+            {
+                border-radius: 15px;
+            }
+            .label
+            {
+                margin-left: 10px;
+                border-radius: 15px;
+            }
+            </style>
+            <script language="javascript">
+            function dis_able() {
+                if (document.myform.payvia.value != 'chkdd')
+                {
+                    document.myform.num.disabled = 1;
+                    document.myform.bank.disabled = 1;
+                    document.myform.branch.disabled = 1;
+                    document.myform.date.disabled = 1;
+                }
+                else
+                {
+                    document.myform.num.disabled = 0;
+                    document.myform.bank.disabled = 0;
+                    document.myform.branch.disabled = 0;
+                    document.myform.date.disabled = 0;
+                }
+            }
+            </script>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>   
+<script type="text/javascript">   
+$(document).ready(function()
+{
+  $('#payvia').change(function()
+  {
+    if($('#payvia').val() === 'chkdd')
+    {
+      $('#num').show();
+      $('#bank').show();
+      $('#branch').show();
+      $('#date').show();
+      $('#num0').show();
+      $('#bank0').show();
+      $('#branch0').show();
+      $('#date0').show();
+    }
+    else
+    {
+      $('#num').hide();
+      $('#bank').hide();
+      $('#branch').hide();
+      $('#date').hide();
+      $('#num0').hide();
+      $('#bank0').hide();
+      $('#branch0').hide();
+      $('#date0').hide();
+    }
+  });
+});
+
+</script>  
+            </head>
+            <div style="background-image: linear-gradient(to bottom, #7325c8, #9164dc, #b299ec, #d6ccf8, #ffffff);">
+                <p>
+                    <img src="NSEC.jpeg" align="left">
+                    <img src="TIG.png" align="right">
+                    <h3 align="center" style="text-shadow: 1px 1px;">STUDENT COPY</h3>
+                    <h1 align="center">Netaji Subhash Engineering College</h1>
+                    <h4 align="center">Technocity, Panchpota, Garia, Kolkata - 700152, Phone: (033)2436-1285/3333</h4><br>
+                    <h4 align="center">Money Receipt</h4>
+                </p>
+            </div>
+            <div class="container" style="background-image: linear-gradient(to top, #1728e0, #0068fe, #008ffc, #00aee9, #00c9d7, #52d5e0, #78e2e8, #97eef2, #b7f1ff, #d8f3ff, #f1f7ff, #ffffff);">
+                    <form name="myform" action="document.php" method="POST">
+                    <div align="right" style="float: left; width: 46%">
+                    <label>Student's Name (BLOCK LETTER):</label>
+                    <input required style="width: 50%; margin-left: 5px; border-radius: 15px" type="text" name="name" placeholder="Your name.."><br><br>
+                    <label class="label">Stream: </label>
+                    <input required style="width: 50%; margin-left: 5px; border-radius: 15px" type="text" name="stream" placeholder="Enter your stream.."><br><br>
+                    <label>Email ID: </label>
+                    <input required style="width: 50%; margin-left: 5px; height: 35px; border-radius: 15px" type="email" name="email" placeholder="Make sure it is correct, to receive the receipt.."><br>
+                    </div>
+                    <div align="right" style="float: right; margin-right: 15%; width: 33%;">
+                    <label class="label">Phone No. </label>
+                    <input required type="number" name="number" placeholder="Your contact number.." style="width: 55%; border-radius: 15px"><br><br>
+                    <label class="label">Student ID No. </label>
+                    <input required type="number" name="studentID" placeholder="Enter Student ID.." style="width: 55%; border-radius: 15px"><br><br>
+                    <label class="label">MAKAUT Reg. No. </label>
+                    <input required type="number" name="regno" placeholder="Enter MAKAUT registration number.." style="width: 55%; border-radius: 15px"><br><br>
+                    <label class="label">Student Roll No. </label>
+                    <input required type="number" name="rollno" placeholder="Enter MAKAUT roll number.." style="width: 55%; border-radius: 15px"><br><br>
+                    <label>Year-</label>
+                    <select required name="year" class="dropdown">
+                      <option name="year" value=""  disabled="disabled" selected="selected">select year</option>
+                      <option value="First">1st</option>
+                      <option value="Second">2d</option>
+                      <option value="Third">3rd</option>
+                      <option value="Fourth">4th</option>
+                    </select>
+                    <label style="margin-left: 5px;">Semester-</label>
+                    <select required name="semester" class="dropdown">
+                      <option name="semester" value=""  disabled="disabled" selected="selected">select semester</option>
+                      <option value="First">1st</option>
+                      <option value="Second">2nd</option>
+                      <option value="Third">3rd</option>
+                      <option value="Fourth">4th</option>
+                      <option value="Fifth">5th</option>
+                      <option value="Sixth">6th</option>
+                      <option value="Seventh">7th</option>
+                      <option value="Eighth">8th</option>
+                    </select>
+                  </div>
+                  <br><br><br><br><br><br><br><br><br><br><br><br>
+                    <label>Received a sum of Rupees:</label>
+                    <input required style="width: 55%; margin-left: 5px; border-radius: 15px;" type="text" name="rupees" placeholder="Amount in words.."><br>
+
+                    <label style="font-size: 28;">Fees Details:</label><br><br>
+                    
+                    <div align="right" style="margin-left: 15%; float: left;">
+                    <label>MAKAUT Development Fees:</label>
+                    <input type="number" name="cb1" value=0 class="label"><br><br>
+                    <label>MAKAUT Registration Fees:</label>
+                    <input type="number" name="cb2" value=0 class="label"><br><br>
+                    <label>MAKAUT Exam Fees:</label>
+                    <input type="number" name="cb3" value=0 class="label"><br><br>
+                    <label>MAKAUT PPR/PPS:</label>
+                    <input type="number" name="cb4" value=0 class="label"><br><br>
+                    <label>MAKAUT Back Log:</label>
+                    <input type="number" name="cb5" value=0 class="label"><br><br>
+                    <label>Other:</label>
+                    <input type="number" name="cb6" value=0 class="label"><br><br>
+                    </div>
+                  
+                    <div align="right" style="margin-right: 15%; float: right;">
+                            <label>Select payment method-</label>
+                            <select required id="payvia" name="payvia" onChange="dis_able()" class="payvia">
+                                <option name="select2" value="" disabled="disabled" selected="selected">select method</option>
+                                <option value="Cash">Cash</option>
+                                <option value="chkdd">Cheque or Demand Draft</option>
+                            </select><br>
+                            <label id="num0" style="display: none;">Cheque/DD number:</label>
+                            <input id="num" required disabled type="text" name="num" style="display: none; border-radius: 15px;"><br>
+                            <label id="bank0" style="display: none;">Issuing bank:</label>
+                            <input id="bank" required disabled type="text" name="bank" style="display: none; border-radius: 15px;"><br>
+                            <label id="branch0" style="display: none;">Bank branch:</label>
+                            <input id="branch" required disabled type="text" name="branch" style="display: none; border-radius: 15px;"><br>
+                            <label id="date0" style="display: none;">Cheque/DD date:</label>
+                            <input id="date" required disabled type="date" name="date" style="display: none; border-radius: 15px;">
+                        </div>
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    <label>Comments:</label><br>
+                    <textarea name="Comments" placeholder="Write number printed on notes (if asked)." 
+                     style="height:100px; width: 50%; border-radius: 19px;"></textarea><br>
+                    <input type="submit" value="Submit" style="border-radius: 25px;">
+                    
+                    </form>
+                  </div>
+    </body>
+</html>
